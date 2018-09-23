@@ -18,7 +18,9 @@ after_success:
 script:
 - cd src
 - cmake .
-- cd ..
-- CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake -DCOVERAGE=1 .
-- cmake --build .
-- ./tests
+- cd ../test
+
+test:
+  - CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake -DCOVERAGE=1 .
+  - cmake --build .
+  - ./tests
