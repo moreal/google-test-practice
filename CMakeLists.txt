@@ -1,14 +1,7 @@
-cmake_minimum_required(VERSION 2.8)
-project(GTestTest)
+cmake_minimum_required(VERSION 3.10)
+#project(GoogleTest)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-
-add_executable(GTestTest
-        test/main.cpp)
-
-target_link_libraries(GTestTest
-        pthread
-        gtest
-        gtest_main)
+add_subdirectory(calculator)
+add_subdirectory(test)
