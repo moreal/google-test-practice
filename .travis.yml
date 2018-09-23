@@ -2,6 +2,10 @@ dist: trusty
 sudo: false
 language: cpp
 
+before_install:
+- wget -O cmake.sh https://cmake.org/files/v3.10/cmake-3.10.0-rc1-Linux-x86_64.sh
+- sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
+
 script:
 - cd src
 - cmake .
